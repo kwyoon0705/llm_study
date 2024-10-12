@@ -3,3 +3,5 @@ OpenAI-API-Key.py
 /lecture-03-text-classification/bert_intent_model.pth
 /강의자료/*
 /.idea/*
+*.json
+*/*.json
