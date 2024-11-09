@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent building using Cloud based RAG and LLM for WMS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 80%; margin: 20px auto; }
+        h2 { font-size: 1.8em; }
+
+        /* 입력창과 응답창 스타일 */
+        .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        #query {
+            width: 100%;
+            height: 50px;
+            font-size: 1.2em;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 0 20px;
+            height: 50px;
+            width: 100px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #response-box {
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            text-align: left;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        canvas { margin-top: 30px; }
+
+        /* 개발자 이름 스타일 */
+        .developer-name {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5em;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="developer-name"><span style="color: gray;">Developer</span>
+ : <b>윤건우</b></div> <!-- 개발자 이름 표시 -->
+
+    <div class="container">
+        <h2>AI Agent Project : WMS</h2>
+
+        <div class="input-container">
+            <input type="text" id="query" name="query" placeholder="Enter your query">
+            <button type="submit" form="queryForm">확인</button>
+        </div>
+
+        <form id="queryForm"></form>
+
+        <div id="response-box"></div>
+
+        <h3>Monthly Data Overview</h3>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+</html>
